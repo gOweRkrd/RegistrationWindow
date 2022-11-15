@@ -28,16 +28,10 @@ class MainViewController: UIViewController {
     
     var items = ["1","2","3","4","5"]
     
-//        var items = [
-//            Item(
-//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
-//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
-//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
-//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
-//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool))
+//    var items = [
+//    Item(textFieldName: "", textFieldAge:"", deleteButton: "")
 //    ]
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

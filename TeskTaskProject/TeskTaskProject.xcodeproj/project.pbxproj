@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5092E75A2923B15800022627 /* ExtensionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7592923B15800022627 /* ExtensionColorView.swift */; };
 		5092E75C2923B29100022627 /* ExtensionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E75B2923B29100022627 /* ExtensionAction.swift */; };
+		5092E75F2923B9FE00022627 /* ExtensionHVsetupConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */; };
+		5092E7622923BBBA00022627 /* ExtensionFVConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */; };
+		5092E7652923BCFD00022627 /* ExtensionCellConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */; };
 		50F6D8AA292174050019873D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8A9292174050019873D /* AppDelegate.swift */; };
 		50F6D8AC292174050019873D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8AB292174050019873D /* SceneDelegate.swift */; };
 		50F6D8AE292174050019873D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8AD292174050019873D /* MainViewController.swift */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		5092E7592923B15800022627 /* ExtensionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColorView.swift; sourceTree = "<group>"; };
 		5092E75B2923B29100022627 /* ExtensionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAction.swift; sourceTree = "<group>"; };
+		5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHVsetupConstrains.swift; sourceTree = "<group>"; };
+		5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFVConstrains.swift; sourceTree = "<group>"; };
+		5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCellConstrains.swift; sourceTree = "<group>"; };
 		50F6D8A6292174050019873D /* TeskTaskProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeskTaskProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F6D8A9292174050019873D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F6D8AB292174050019873D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5092E75D2923B9B800022627 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8BD292174EF0019873D /* HeaderView.swift */,
+				5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */,
+			);
+			name = HeaderView;
+			sourceTree = "<group>";
+		};
+		5092E7602923BB5F00022627 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8C3292383CA0019873D /* FooterView.swift */,
+				5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
+		5092E7632923BCD200022627 /* MyOwnCell */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8BF2922239A0019873D /* MyOwnCell.swift */,
+				5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */,
+			);
+			name = MyOwnCell;
+			sourceTree = "<group>";
+		};
 		50F6D89D292174050019873D = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +125,9 @@
 		50F6D8C62923AABF0019873D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				50F6D8BD292174EF0019873D /* HeaderView.swift */,
-				50F6D8C3292383CA0019873D /* FooterView.swift */,
-				50F6D8BF2922239A0019873D /* MyOwnCell.swift */,
+				5092E75D2923B9B800022627 /* HeaderView */,
+				5092E7602923BB5F00022627 /* FooterView */,
+				5092E7632923BCD200022627 /* MyOwnCell */,
 				50F6D8AB292174050019873D /* SceneDelegate.swift */,
 			);
 			path = View;
@@ -195,11 +228,14 @@
 				50F6D8C4292383CA0019873D /* FooterView.swift in Sources */,
 				50F6D8AE292174050019873D /* MainViewController.swift in Sources */,
 				50F6D8AA292174050019873D /* AppDelegate.swift in Sources */,
+				5092E7622923BBBA00022627 /* ExtensionFVConstrains.swift in Sources */,
 				50F6D8C92923AE700019873D /* ExtensionSetupTableView.swift in Sources */,
 				50F6D8CC2923AFD20019873D /* ExtensionSetupConstrains.swift in Sources */,
 				50F6D8C02922239A0019873D /* MyOwnCell.swift in Sources */,
+				5092E7652923BCFD00022627 /* ExtensionCellConstrains.swift in Sources */,
 				5092E75C2923B29100022627 /* ExtensionAction.swift in Sources */,
 				50F6D8AC292174050019873D /* SceneDelegate.swift in Sources */,
+				5092E75F2923B9FE00022627 /* ExtensionHVsetupConstrains.swift in Sources */,
 				50F6D8C229222D470019873D /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

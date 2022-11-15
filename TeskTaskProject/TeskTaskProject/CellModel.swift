@@ -11,7 +11,7 @@ struct Item {
 
     let textFieldName: String
     let textFieldAge: String
-    let deleteButton : Bool
+    let deleteButton : String
 
 }
 

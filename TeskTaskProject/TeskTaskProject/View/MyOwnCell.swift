@@ -3,7 +3,8 @@ import UIKit
 
 
 // MARK: - Constant Constraints
-private extension CGFloat {
+
+ extension CGFloat {
     
     static let nameChildTextFieldTopAnchor: CGFloat = 7
     static let nameChildTextFieldLeadingAnchor: CGFloat = 17
@@ -23,13 +24,11 @@ private extension CGFloat {
 
 class MyOwnCell: UITableViewCell  {
  
-    
-    
     var buttonAdd: (() -> Void)?
     
-    // MARK: - Costomize cell
+    // MARK: - Costomize UI
     
-    private lazy var nameChildTextField : UITextField = {
+     lazy var nameChildTextField : UITextField = {
         let nameChildTextField = UITextField ()
         nameChildTextField.backgroundColor = .lightText
         nameChildTextField.placeholder = "Имя"
@@ -39,8 +38,7 @@ class MyOwnCell: UITableViewCell  {
         return nameChildTextField
     }()
     
-    
-      private lazy var ageChildTextField : UITextField = {
+       lazy var ageChildTextField : UITextField = {
         let ageChildTextField = UITextField ()
         ageChildTextField.backgroundColor = .lightText
         ageChildTextField.placeholder = "Возраст"
@@ -49,7 +47,7 @@ class MyOwnCell: UITableViewCell  {
         return ageChildTextField
     }()
     
-     private lazy var deleteButton : UIButton = {
+      lazy var deleteButton : UIButton = {
         let deleteButton = UIButton ()
         deleteButton.setTitle("Удалить", for: .normal)
         deleteButton.setTitleColor(UIColor.blue, for: .normal)
@@ -60,28 +58,11 @@ class MyOwnCell: UITableViewCell  {
         return deleteButton
     }()
     
-    @objc func deleteBut (){
-// должно удалять(скрывать) ячейки и подтягивать ниже стоящие
-        nameChildTextField.isHidden = true
-        ageChildTextField.isHidden = true
-        deleteButton.isHidden = true
-        
-        print("удалить ребенка")
-    }
-    
-    // MARK: - Lifecycle
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureView()
-        costomizeCell()
-     
-    }
+    // MARK: - Costomize Cell
     
     func costomizeCell () {
         
         contentView.backgroundColor = UIColor(red: 237/255, green: 231/255, blue: 229/255, alpha: 1)
-        backgroundColor = .clear
         contentView.layer.borderColor = UIColor.white.cgColor
     
     }
@@ -103,6 +84,16 @@ class MyOwnCell: UITableViewCell  {
 //        coinLabel.text = "\(model.coin)"
     }
     
+    // MARK: - Initialization
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        configureView()
+        costomizeCell()
+     
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -111,7 +102,19 @@ class MyOwnCell: UITableViewCell  {
         super.layoutSubviews()
     }
     
-    // MARK: - Setup constrains
+  
+    // MARK: - Action
+    
+    @objc func deleteBut (){
+// должно удалять(скрывать) ячейки и подтягивать ниже стоящие
+        nameChildTextField.isHidden = true
+        ageChildTextField.isHidden = true
+        deleteButton.isHidden = true
+        
+        print("удалить ребенка")
+    }
+    
+   //  MARK: - Setup constrains
     
     private func setupConstraintsCell() {
         
