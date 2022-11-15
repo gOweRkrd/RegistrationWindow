@@ -1,6 +1,10 @@
 
 import UIKit
 
+
+protocol FooterCellDelegate:AnyObject {
+    func didTapCler()
+}
 // MARK: - Constant Constraints
 
     extension CGFloat {
@@ -14,7 +18,7 @@ import UIKit
 class FooterView : UIView {
     
         var buttonFooter: (() -> Void)?
-    
+   weak var delegate: FooterCellDelegate?
     // MARK: - Costomize
     
        lazy var clearButton : UIButton = {
@@ -44,7 +48,8 @@ class FooterView : UIView {
 
     // MARK: - Action
     @objc func clearBut() {
-        
+
+        delegate?.didTapCler()
         buttonFooter?()
         
     }

@@ -5,6 +5,10 @@
 //  Created by Александр Косяков on 13.11.2022.
 //
 
+protocol HeaderViewDelegate: AnyObject {
+    func didTapAdd()
+}
+
 import UIKit
 
 // MARK: - Constant Constraints
@@ -36,6 +40,8 @@ import UIKit
 
 
 class HeaderView : UIView {
+    
+    weak var delegate: HeaderViewDelegate?
     
     var buttonHandler: (() -> Void)?
     
@@ -108,7 +114,8 @@ class HeaderView : UIView {
     // MARK: - Action
     
     @objc func addBut (){
-        buttonHandler?()
+        delegate?.didTapAdd()
+//        buttonHandler?()
         
 // должно срабатывать по нажатию и добавлять по одной ячейки до 5 ячеек
         

@@ -5,14 +5,11 @@
 //  Created by Александр Косяков on 02.11.2022.
 //
 
-import Foundation
+import UIKit
 
-struct Item {
+struct CellModel {
 
     let textFieldName: String
     let textFieldAge: String
     let deleteButton : String
-
 }
-
-typealias items = [Item]
