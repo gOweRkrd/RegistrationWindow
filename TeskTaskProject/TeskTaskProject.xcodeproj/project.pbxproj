@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5092E75A2923B15800022627 /* ExtensionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7592923B15800022627 /* ExtensionColorView.swift */; };
+		5092E75C2923B29100022627 /* ExtensionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E75B2923B29100022627 /* ExtensionAction.swift */; };
 		50F6D8AA292174050019873D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8A9292174050019873D /* AppDelegate.swift */; };
 		50F6D8AC292174050019873D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8AB292174050019873D /* SceneDelegate.swift */; };
 		50F6D8AE292174050019873D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8AD292174050019873D /* MainViewController.swift */; };
@@ -16,9 +18,13 @@
 		50F6D8C02922239A0019873D /* MyOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8BF2922239A0019873D /* MyOwnCell.swift */; };
 		50F6D8C229222D470019873D /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8C129222D470019873D /* CellModel.swift */; };
 		50F6D8C4292383CA0019873D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8C3292383CA0019873D /* FooterView.swift */; };
+		50F6D8C92923AE700019873D /* ExtensionSetupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8C82923AE700019873D /* ExtensionSetupTableView.swift */; };
+		50F6D8CC2923AFD20019873D /* ExtensionSetupConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8CB2923AFD20019873D /* ExtensionSetupConstrains.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5092E7592923B15800022627 /* ExtensionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColorView.swift; sourceTree = "<group>"; };
+		5092E75B2923B29100022627 /* ExtensionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAction.swift; sourceTree = "<group>"; };
 		50F6D8A6292174050019873D /* TeskTaskProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeskTaskProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F6D8A9292174050019873D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F6D8AB292174050019873D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +36,8 @@
 		50F6D8BF2922239A0019873D /* MyOwnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOwnCell.swift; sourceTree = "<group>"; };
 		50F6D8C129222D470019873D /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		50F6D8C3292383CA0019873D /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		50F6D8C82923AE700019873D /* ExtensionSetupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetupTableView.swift; sourceTree = "<group>"; };
+		50F6D8CB2923AFD20019873D /* ExtensionSetupConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetupConstrains.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +70,54 @@
 		50F6D8A8292174050019873D /* TeskTaskProject */ = {
 			isa = PBXGroup;
 			children = (
+				50F6D8C52923AAAC0019873D /* Model */,
+				50F6D8C62923AABF0019873D /* View */,
+				50F6D8C72923AAED0019873D /* Controller */,
 				50F6D8A9292174050019873D /* AppDelegate.swift */,
-				50F6D8AB292174050019873D /* SceneDelegate.swift */,
-				50F6D8AD292174050019873D /* MainViewController.swift */,
-				50F6D8BD292174EF0019873D /* HeaderView.swift */,
-				50F6D8C3292383CA0019873D /* FooterView.swift */,
-				50F6D8BF2922239A0019873D /* MyOwnCell.swift */,
-				50F6D8C129222D470019873D /* CellModel.swift */,
 				50F6D8B2292174060019873D /* Assets.xcassets */,
 				50F6D8B4292174060019873D /* LaunchScreen.storyboard */,
 				50F6D8B7292174060019873D /* Info.plist */,
 			);
 			path = TeskTaskProject;
+			sourceTree = "<group>";
+		};
+		50F6D8C52923AAAC0019873D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8C129222D470019873D /* CellModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		50F6D8C62923AABF0019873D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8BD292174EF0019873D /* HeaderView.swift */,
+				50F6D8C3292383CA0019873D /* FooterView.swift */,
+				50F6D8BF2922239A0019873D /* MyOwnCell.swift */,
+				50F6D8AB292174050019873D /* SceneDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50F6D8C72923AAED0019873D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8AD292174050019873D /* MainViewController.swift */,
+				50F6D8CA2923AF720019873D /* Extension */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		50F6D8CA2923AF720019873D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8C82923AE700019873D /* ExtensionSetupTableView.swift */,
+				50F6D8CB2923AFD20019873D /* ExtensionSetupConstrains.swift */,
+				5092E7592923B15800022627 /* ExtensionColorView.swift */,
+				5092E75B2923B29100022627 /* ExtensionAction.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,11 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5092E75A2923B15800022627 /* ExtensionColorView.swift in Sources */,
 				50F6D8BE292174EF0019873D /* HeaderView.swift in Sources */,
 				50F6D8C4292383CA0019873D /* FooterView.swift in Sources */,
 				50F6D8AE292174050019873D /* MainViewController.swift in Sources */,
 				50F6D8AA292174050019873D /* AppDelegate.swift in Sources */,
+				50F6D8C92923AE700019873D /* ExtensionSetupTableView.swift in Sources */,
+				50F6D8CC2923AFD20019873D /* ExtensionSetupConstrains.swift in Sources */,
 				50F6D8C02922239A0019873D /* MyOwnCell.swift in Sources */,
+				5092E75C2923B29100022627 /* ExtensionAction.swift in Sources */,
 				50F6D8AC292174050019873D /* SceneDelegate.swift in Sources */,
 				50F6D8C229222D470019873D /* CellModel.swift in Sources */,
 			);

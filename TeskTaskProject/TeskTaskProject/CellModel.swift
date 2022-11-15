@@ -10,9 +10,9 @@ import Foundation
 struct Item {
 
     let textFieldName: String
-    let textFieldAge: Int
+    let textFieldAge: String
     let deleteButton : Bool
-    
+
 }
 
-//typealias items = [Item]
+typealias items = [Item]

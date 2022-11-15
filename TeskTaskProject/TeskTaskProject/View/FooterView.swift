@@ -41,6 +41,7 @@ class FooterView : UIView {
     }
     
     @objc func clearBut() {
+        
         buttonFooter?()
         
        
