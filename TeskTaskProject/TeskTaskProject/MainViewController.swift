@@ -8,7 +8,8 @@
 import UIKit
 
 // MARK: - Constant Constraints
-private extension CGFloat {
+
+    extension CGFloat {
         
     static let headerViewHeightAnchor : CGFloat = -550
     
@@ -20,106 +21,34 @@ class MainViewController: UIViewController {
 
     // MARK: - Lifecycle
     
-    private let headerView = HeaderView()
-    private let footerView = FooterView()
-    private let myTableView = UITableView(frame: .zero, style: .plain)
+            let headerView = HeaderView()
+            let footerView = FooterView()
+            let myTableView = UITableView(frame: .zero, style: .plain)
     
     
     var items = ["1","2","3","4","5"]
     
+//        var items = [
+//            Item(
+//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
+//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
+//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
+//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool),
+//                Item(textFieldName: "1.8T",textFieldAge: false, deleteButton: Bool))
+//    ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTableView()
         setupConstraints()
-        view.backgroundColor = UIColor(red: 237/255, green: 231/255, blue: 229/255, alpha: 1)
-        headerView.backgroundColor = UIColor(red: 237/255, green: 231/255, blue: 229/255, alpha: 1)
-        footerView.backgroundColor = UIColor(red: 237/255, green: 231/255, blue: 229/255, alpha: 1)
-        // делаем связь экранов
-        headerView.buttonHandler = {
-            [weak self] in
-//           nameChildTextField.isHidden = false
-//           ageChildTextField.isHidden = false
-//           deleteButton.isHidden = false
-        }
-        footerView.buttonFooter = {
-            [weak self] in
-            
-            let actionSheetController = UIAlertController(title: "Please select",
-                                                          message: "Option to select",
-                                                          preferredStyle: .actionSheet)
-
-            let cancelActionButton = UIAlertAction(title: "Отмена",
-                                                   style: .cancel) { _ in
-
-                print("отмена")
-            }
-            let deleteActionButton = UIAlertAction(title: "Сбросить данные",
-                                                   style: .destructive) { [self] _ in
-//                    nameChildTextField.isHidden = false
-//                        ageChildTextField.isHidden = false
-//                self?.footerView.clearButton.isHidden = false
-                
-
-
-
-                print("сбросить данные")
-            }
-            actionSheetController.addAction(cancelActionButton)
-            actionSheetController.addAction(deleteActionButton)
-            self?.present(actionSheetController, animated: true,completion: nil)
-        }
-
-    }
-    
-    // MARK: - Setup TableView
-    
-    private func setupTableView() {
+        colorView ()
+        action()
         
-        myTableView.backgroundColor = UIColor(red: 237/255, green: 231/255, blue: 229/255, alpha: 1)
-        myTableView.rowHeight = 130
-        myTableView.register(MyOwnCell.self, forCellReuseIdentifier: "CellID")
-        myTableView.dataSource = self
-        myTableView.delegate = self
-    }
-    
-    // MARK: - Setup Constrains
-    
-        private func setupConstraints() {
-            let guide = view.safeAreaLayoutGuide
-            
-            view.addSubview(headerView)
-            view.addSubview(myTableView)
-            view.addSubview(footerView)
-            
-            headerView.translatesAutoresizingMaskIntoConstraints = false
-            myTableView.translatesAutoresizingMaskIntoConstraints = false
-            footerView.translatesAutoresizingMaskIntoConstraints = false
-  
-            NSLayoutConstraint.activate([
-                headerView.topAnchor.constraint(equalTo: view.topAnchor),
-                headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                headerView.heightAnchor.constraint(equalTo: view.heightAnchor,constant:.headerViewHeightAnchor)
-            ])
-            
-            NSLayoutConstraint.activate([
-                myTableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-                myTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:.myTableViewTrailingAnchor),
-                myTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:.myTableViewBottomAnchor)
-            ])
-            
-            NSLayoutConstraint.activate([
-                footerView.topAnchor.constraint(equalTo: myTableView.bottomAnchor,constant:0),
-                footerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                footerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
-            ])
-
         }
         
     }
-
 
 // MARK: - TableViewDataSource,TableViewDelegate
 extension MainViewController: UITableViewDataSource {

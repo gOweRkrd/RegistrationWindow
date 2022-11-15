@@ -87,7 +87,20 @@ class MyOwnCell: UITableViewCell  {
     }
     
     func setupContent(model:String) {
+//        nameChildTextField.text = String(model)
+      
+      
+//        if model.flag {
+//            self.contentView.backgroundColor = .gray
+//
+//        } else {
+//            self.contentView.backgroundColor = .blue
+//
+//        }
        
+        
+//        labelNumber.text = "$ \(model.value)"
+//        coinLabel.text = "\(model.coin)"
     }
     
     required init?(coder: NSCoder) {
