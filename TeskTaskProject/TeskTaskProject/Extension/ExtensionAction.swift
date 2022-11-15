@@ -11,10 +11,6 @@ extension MainViewController {
     
     func action() {
         
-        headerView.buttonHandler = {
-          [weak self] in
-
-        }
         footerView.buttonFooter = {
             [weak self] in
             
@@ -29,9 +25,12 @@ extension MainViewController {
             }
             let deleteActionButton = UIAlertAction(title: "Сбросить данные",
                                                    style: .destructive) { [self] _ in
+                
+                self?.headerView.nameTextField.text = ""
+                self?.headerView.ageTextField.text = ""
+             
+                }
 
-                print("сбросить данные")
-            }
             actionSheetController.addAction(cancelActionButton)
             actionSheetController.addAction(deleteActionButton)
             self?.present(actionSheetController, animated: true,completion: nil)

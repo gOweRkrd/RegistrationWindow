@@ -5,11 +5,15 @@
 //  Created by Александр Косяков on 13.11.2022.
 //
 
+protocol HeaderViewDelegate: AnyObject {
+    func didTapAdd()
+}
+
 import UIKit
 
 // MARK: - Constant Constraints
 
-private extension CGFloat {
+    extension CGFloat {
     
     static let welcomeTitleTopAncor: CGFloat = 56
     static let welcomeTitleHeightAnchor: CGFloat = 80.0
@@ -37,11 +41,13 @@ private extension CGFloat {
 
 class HeaderView : UIView {
     
+    weak var delegate: HeaderViewDelegate?
+    
     var buttonHandler: (() -> Void)?
     
     // MARK: - Costomize
       
-    private lazy var welcomeTitle : UILabel = {
+     lazy var welcomeTitle : UILabel = {
         let welcomeTitle = UILabel()
         welcomeTitle.text = "Персональные данные"
         welcomeTitle.font = UIFont.systemFont(ofSize: 30)
@@ -53,7 +59,7 @@ class HeaderView : UIView {
     } ()
     
     
-    private  lazy var nameTextField : UITextField = {
+      lazy var nameTextField : UITextField = {
         let nameTextField = UITextField ()
         nameTextField.backgroundColor = .lightText
         nameTextField.placeholder = "Имя"
@@ -61,7 +67,7 @@ class HeaderView : UIView {
         return nameTextField
     }()
     
-    private  lazy var ageTextField : UITextField = {
+      lazy var ageTextField : UITextField = {
         let ageTextField = UITextField ()
         ageTextField.backgroundColor = .lightText
         ageTextField.placeholder = "Возраст"
@@ -69,7 +75,7 @@ class HeaderView : UIView {
         return ageTextField
     }()
     
-    private  lazy var childLabel : UILabel = {
+      lazy var childLabel : UILabel = {
         let childLabel = UILabel()
         childLabel.text = "Дети(макс.5)"
         childLabel.font = UIFont.systemFont(ofSize: 30)
@@ -80,7 +86,7 @@ class HeaderView : UIView {
         return childLabel
     } ()
     
-    private  lazy var addButton : UIButton = {
+      lazy var addButton : UIButton = {
         let addButton = UIButton ()
         addButton.setTitle("+ Добавить ребенка", for: .normal)
         addButton.setTitleColor(UIColor.blue, for: .normal)
@@ -108,7 +114,8 @@ class HeaderView : UIView {
     // MARK: - Action
     
     @objc func addBut (){
-        buttonHandler?()
+        delegate?.didTapAdd()
+//        buttonHandler?()
         
 // должно срабатывать по нажатию и добавлять по одной ячейки до 5 ячеек
         
@@ -121,59 +128,3 @@ class HeaderView : UIView {
     }
     
 }
-// MARK: - Setup constrains
-
-extension HeaderView {
-    
-    func setupView() {
-        
-        self.addSubview(welcomeTitle)
-        self.addSubview(nameTextField)
-        self.addSubview(ageTextField)
-        self.addSubview(childLabel)
-        self.addSubview(addButton)
-    }
-    
-    func setupConstraints () {
-        
-        welcomeTitle.translatesAutoresizingMaskIntoConstraints = false
-        nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        ageTextField.translatesAutoresizingMaskIntoConstraints = false
-        childLabel.translatesAutoresizingMaskIntoConstraints = false
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            welcomeTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: .welcomeTitleTopAncor),
-            welcomeTitle.heightAnchor.constraint(equalToConstant: .welcomeTitleHeightAnchor),
-            welcomeTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
-        
-        NSLayoutConstraint.activate([
-            nameTextField.topAnchor.constraint(equalTo: welcomeTitle.topAnchor, constant:.nameTextFieldTopAncor),
-            nameTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: .nameTextFieldLeadingAnchor),
-            nameTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .nameTextFieldTrailingAnchor),
-            nameTextField.heightAnchor.constraint(equalToConstant: .nameTextFieldHeightAnchor)])
-        
-        NSLayoutConstraint.activate([
-            ageTextField.topAnchor.constraint(equalTo: nameTextField.topAnchor, constant:.ageTextFieldTopAncor),
-            ageTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: .ageTextFieldLeadingAnchor),
-            ageTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .ageTextFieldTrailingAnchor),
-            ageTextField.heightAnchor.constraint(equalToConstant: .ageTextFieldHeightAnchor)])
-        
-        NSLayoutConstraint.activate([
-            childLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: .childLabelTopAncor),
-            childLabel.heightAnchor.constraint(equalToConstant: .childLabelHeightAnchor),
-            childLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: .childleadingAnchor)])
-
-        NSLayoutConstraint.activate([
-            addButton.topAnchor.constraint(equalTo: ageTextField.topAnchor, constant: .addButtonTopAncor),
-            addButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .addButtonTrailingAnchor),
-            addButton.heightAnchor.constraint(equalToConstant: .addButtonHeightAnchor)])
-    }
-    
-      func configureView() {
-         setupView()
-         setupConstraints()
-    }
-}
-
-

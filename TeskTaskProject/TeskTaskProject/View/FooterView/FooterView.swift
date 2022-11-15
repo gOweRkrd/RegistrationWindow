@@ -1,7 +1,13 @@
 
 import UIKit
 
-private extension CGFloat {
+
+protocol FooterCellDelegate:AnyObject {
+    func didTapCler()
+}
+// MARK: - Constant Constraints
+
+    extension CGFloat {
     
     static let clearButtonTopAncor: CGFloat = 8
     static let clearButtonLeadingAnchor: CGFloat = 40
@@ -12,9 +18,11 @@ private extension CGFloat {
 class FooterView : UIView {
     
         var buttonFooter: (() -> Void)?
+   weak var delegate: FooterCellDelegate?
+    // MARK: - Costomize
     
-    
-    private lazy var clearButton : UIButton = {
+       lazy var clearButton : UIButton = {
+           
         let clearButton = UIButton ()
         clearButton.setTitle("Очистить", for: .normal)
         clearButton.addTarget(self, action: #selector(clearBut), for:.touchUpInside)
@@ -28,6 +36,8 @@ class FooterView : UIView {
         return clearButton
     }()
 
+    // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupFooter()
@@ -35,28 +45,13 @@ class FooterView : UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-     func setupFooter() {
-        addSubview(clearButton)
-        setupConstraintsFooter()
-    }
-    
+
+    // MARK: - Action
     @objc func clearBut() {
-        
+
+        delegate?.didTapCler()
         buttonFooter?()
         
-       
-
     }
-    private func setupConstraintsFooter() {
-
-        clearButton.translatesAutoresizingMaskIntoConstraints = false
-
-            NSLayoutConstraint.activate([
-                clearButton.topAnchor.constraint(equalTo: self.topAnchor, constant: .clearButtonTopAncor),
-                clearButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: .clearButtonLeadingAnchor),
-                clearButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: .clearButtonTrailingAnchor),
-                clearButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-                clearButton.heightAnchor.constraint(equalToConstant: .clearButtonHeightAnchor)
-            ])
-    }
+    
 }
