@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5092E75A2923B15800022627 /* ExtensionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7592923B15800022627 /* ExtensionColorView.swift */; };
-		5092E75C2923B29100022627 /* ExtensionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E75B2923B29100022627 /* ExtensionAction.swift */; };
 		5092E75F2923B9FE00022627 /* ExtensionHVsetupConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */; };
 		5092E7622923BBBA00022627 /* ExtensionFVConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */; };
 		5092E7652923BCFD00022627 /* ExtensionCellConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		5092E7592923B15800022627 /* ExtensionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColorView.swift; sourceTree = "<group>"; };
-		5092E75B2923B29100022627 /* ExtensionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAction.swift; sourceTree = "<group>"; };
 		5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHVsetupConstrains.swift; sourceTree = "<group>"; };
 		5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFVConstrains.swift; sourceTree = "<group>"; };
 		5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCellConstrains.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				50F6D8C82923AE700019873D /* ExtensionSetupTableView.swift */,
 				50F6D8CB2923AFD20019873D /* ExtensionSetupConstrains.swift */,
 				5092E7592923B15800022627 /* ExtensionColorView.swift */,
-				5092E75B2923B29100022627 /* ExtensionAction.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -233,7 +230,6 @@
 				50F6D8CC2923AFD20019873D /* ExtensionSetupConstrains.swift in Sources */,
 				50F6D8C02922239A0019873D /* MyOwnCell.swift in Sources */,
 				5092E7652923BCFD00022627 /* ExtensionCellConstrains.swift in Sources */,
-				5092E75C2923B29100022627 /* ExtensionAction.swift in Sources */,
 				50F6D8AC292174050019873D /* SceneDelegate.swift in Sources */,
 				5092E75F2923B9FE00022627 /* ExtensionHVsetupConstrains.swift in Sources */,
 				50F6D8C229222D470019873D /* CellModel.swift in Sources */,

@@ -26,15 +26,11 @@ class MainViewController: UIViewController {
             let headerView = HeaderView()
             let footerView = FooterView()
             let myTableView = UITableView(frame: .zero, style: .plain)
-    
+            let cellModel = MyOwnCell()
   
-        
-    var items = [CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-    ]
+    var items:[CellModel] = [CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")]
+          
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +38,6 @@ class MainViewController: UIViewController {
         setupTableView()
         setupConstraints()
         colorView ()
-        action()
         
         }
         
@@ -96,8 +91,13 @@ extension MainViewController: MyOwnCellDelegate {
 extension MainViewController: HeaderViewDelegate {
     
     func didTapAdd() {
-        let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
+        footerView.clearButton.isHidden = false
+//        cellModel.nameChildTextField.isHidden = true
+//        cellModel.ageChildTextField.isHidden = true
+//        cellModel.deleteButton.isHidden = true
+         let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
         items.append(cellModel)
+//        items.insert(cellModel, at: 0)
         myTableView.reloadData()
     }
 }
@@ -105,8 +105,34 @@ extension MainViewController: HeaderViewDelegate {
 extension MainViewController: FooterCellDelegate {
     
     func didTapCler() {
-        items.remove(at:0)
-        myTableView.reloadData()
+        
+        let actionSheetController = UIAlertController(title: "Please select",
+                                                      message: "Option to select",
+                                                      preferredStyle: .actionSheet)
+
+        let cancelActionButton = UIAlertAction(title: "Отмена",
+                                               style: .cancel) { _ in
+
+            print("отмена")
+        }
+        let deleteActionButton = UIAlertAction(title: "Сбросить данные",
+                                               style: .destructive) { [self] _ in
+            
+            
+            self.headerView.nameTextField.text = ""
+            self.headerView.ageTextField.text = ""
+            self.cellModel.nameChildTextField.text = ""
+            self.cellModel.ageChildTextField.text = ""
+            footerView.clearButton.isHidden = true
+            items.removeAll()
+            myTableView.reloadData()
+
+            }
+
+        actionSheetController.addAction(cancelActionButton)
+        actionSheetController.addAction(deleteActionButton)
+    self.present(actionSheetController, animated: true,completion: nil)
+
     }
 }
 

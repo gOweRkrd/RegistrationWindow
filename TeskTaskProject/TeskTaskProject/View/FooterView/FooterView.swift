@@ -29,7 +29,7 @@ class FooterView : UIView {
         clearButton.layer.masksToBounds = true
         clearButton.setTitleColor(UIColor.blue, for: .normal)
         clearButton.layer.cornerRadius = 20
-        clearButton.isHidden = false
+        clearButton.isHidden = true
         clearButton.layer.borderWidth = 1
         clearButton.layer.borderColor = UIColor.red.cgColor
         
@@ -50,7 +50,7 @@ class FooterView : UIView {
     @objc func clearBut() {
 
         delegate?.didTapCler()
-        buttonFooter?()
+//        buttonFooter?()
         
     }
     
