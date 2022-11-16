@@ -30,7 +30,7 @@ import UIKit
     
     static let childLabelTopAncor: CGFloat = 70
     static let childLabelHeightAnchor: CGFloat = 400
-    static let childleadingAnchor: CGFloat = 15.0
+    static let childleadingAnchor: CGFloat = 20
     
     static let addButtonTopAncor: CGFloat = 60
     static let addButtonTrailingAnchor: CGFloat = -15
