@@ -26,15 +26,10 @@ class MainViewController: UIViewController {
             let headerView = HeaderView()
             let footerView = FooterView()
             let myTableView = UITableView(frame: .zero, style: .plain)
-    
   
-        
-    var items = [CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-                 CellModel(textFieldName: "", textFieldAge: "", deleteButton: ""),
-    ]
+    var items:[CellModel] = [CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")]
+          
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +37,13 @@ class MainViewController: UIViewController {
         setupTableView()
         setupConstraints()
         colorView ()
-        action()
         
         }
         
     }
 
 // MARK: - TableViewDataSource,TableViewDelegate
+
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,8 +60,9 @@ extension MainViewController: UITableViewDataSource {
         cell.setupContent(model: items[indexPath.row])
         // вызываем делегат для ячейки
         cell.delegate = self
-        // вызываем делегат для головной вью
+        // вызываем делегат для верхнего вью
         headerView.delegate = self
+        // вызываем делегат для нижнего вью
         footerView.delegate = self
 
         return cell
@@ -96,7 +92,11 @@ extension MainViewController: MyOwnCellDelegate {
 extension MainViewController: HeaderViewDelegate {
     
     func didTapAdd() {
-        let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
+        footerView.clearButton.isHidden = false
+//        cellModel.nameChildTextField.isHidden = true
+//        cellModel.ageChildTextField.isHidden = true
+//        cellModel.deleteButton.isHidden = true
+         let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
         items.append(cellModel)
         myTableView.reloadData()
     }
@@ -105,8 +105,33 @@ extension MainViewController: HeaderViewDelegate {
 extension MainViewController: FooterCellDelegate {
     
     func didTapCler() {
-        items.remove(at:0)
-        myTableView.reloadData()
+        
+        let actionSheetController = UIAlertController(title: "Please select",
+                                                      message: "Option to select",
+                                                      preferredStyle: .actionSheet)
+
+        let cancelActionButton = UIAlertAction(title: "Отмена",
+                                               style: .cancel) { _ in
+
+            print("отмена")
+        }
+        let deleteActionButton = UIAlertAction(title: "Сбросить данные",
+                                               style: .destructive) { [self] _ in
+            
+            
+            self.headerView.nameTextField.text = ""
+            self.headerView.ageTextField.text = ""
+            
+            footerView.clearButton.isHidden = true
+            items.removeAll()
+            myTableView.reloadData()
+
+            }
+
+        actionSheetController.addAction(cancelActionButton)
+        actionSheetController.addAction(deleteActionButton)
+    self.present(actionSheetController, animated: true,completion: nil)
+
     }
 }
 
