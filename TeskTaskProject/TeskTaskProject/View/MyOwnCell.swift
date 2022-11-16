@@ -30,7 +30,7 @@ class MyOwnCell: UITableViewCell  {
     weak var delegate: MyOwnCellDelegate?
    
 
-    // MARK: - Costomize UI
+    // MARK: - Castomize UI
     
     lazy var nameChildTextField : UITextField = {
         let nameChildTextField = UITextField ()
@@ -65,9 +65,9 @@ class MyOwnCell: UITableViewCell  {
     
     
     
-    // MARK: - Costomize Cell
+    // MARK: - Castomize Cell
     
-    func costomizeCell () {
+    func castomizeCell () {
         
         contentView.backgroundColor = UIColor(red: 237/255, green: 231/255, blue: 229/255, alpha: 1)
         contentView.layer.borderColor = UIColor.white.cgColor
@@ -84,18 +84,13 @@ class MyOwnCell: UITableViewCell  {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureView()
-        costomizeCell()
+        castomizeCell()
        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     
     // MARK: - Action
     
