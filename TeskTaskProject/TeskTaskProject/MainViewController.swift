@@ -26,7 +26,6 @@ class MainViewController: UIViewController {
             let headerView = HeaderView()
             let footerView = FooterView()
             let myTableView = UITableView(frame: .zero, style: .plain)
-            let cellModel = MyOwnCell()
   
     var items:[CellModel] = [CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")]
           
@@ -44,6 +43,7 @@ class MainViewController: UIViewController {
     }
 
 // MARK: - TableViewDataSource,TableViewDelegate
+
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,8 +60,9 @@ extension MainViewController: UITableViewDataSource {
         cell.setupContent(model: items[indexPath.row])
         // вызываем делегат для ячейки
         cell.delegate = self
-        // вызываем делегат для головной вью
+        // вызываем делегат для верхнего вью
         headerView.delegate = self
+        // вызываем делегат для нижнего вью
         footerView.delegate = self
 
         return cell
@@ -97,7 +98,6 @@ extension MainViewController: HeaderViewDelegate {
 //        cellModel.deleteButton.isHidden = true
          let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
         items.append(cellModel)
-//        items.insert(cellModel, at: 0)
         myTableView.reloadData()
     }
 }
@@ -121,8 +121,7 @@ extension MainViewController: FooterCellDelegate {
             
             self.headerView.nameTextField.text = ""
             self.headerView.ageTextField.text = ""
-            self.cellModel.nameChildTextField.text = ""
-            self.cellModel.ageChildTextField.text = ""
+            
             footerView.clearButton.isHidden = true
             items.removeAll()
             myTableView.reloadData()
