@@ -40,7 +40,7 @@ extension HeaderView {
         NSLayoutConstraint.activate([
             childLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: .childLabelTopAncor),
             childLabel.heightAnchor.constraint(equalToConstant: .childLabelHeightAnchor),
-            childLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant:30),
+            childLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:.childTrailingAnchor),
             childLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: .childleadingAnchor)])
         
         NSLayoutConstraint.activate([

@@ -72,7 +72,7 @@ class MyOwnCell: UITableViewCell  {
     }
     
     func setupContent(model: CellModel) {
-        
+     
     }
     
     // MARK: - Initialization

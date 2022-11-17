@@ -31,7 +31,6 @@ class MainViewController: UIViewController {
     let headerView = HeaderView()
     let footerView = FooterView()
     let myTableView = UITableView(frame: .zero, style: .plain)
-//    let cellView = MyOwnCell ()
     
     var items: [CellModel] = []
     
@@ -53,7 +52,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        sortedItems()
         return items.count
         
     }
@@ -63,9 +62,8 @@ extension MainViewController: UITableViewDataSource {
             fatalError("Creating cell from HotelsListViewController failed")
             
         }
-   
-        cell.setupContent(model: items[indexPath.row] )
         
+        cell.setupContent(model: items[indexPath.row] )
         cell.delegate = self
 
         return cell
@@ -88,7 +86,6 @@ extension MainViewController: MyOwnCellDelegate {
     
     func didTapDelete() {
         
-        // метод поставновки ограничения на добавления в массив
         buttonEnabledDelete ()
         items.remove(at: 0)
         myTableView.reloadData()
@@ -100,9 +97,8 @@ extension MainViewController: HeaderViewDelegate {
     func didTapAdd()  {
         footerView.clearButton.isHidden = false
         
-        let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
+        let cellModel = CellModel(index: "", textFieldName: "", textFieldAge: "", deleteButton: "")
         
-        // метод постановки ограничения на добавления в массив
         buttonEnabledAdd ()
         
         items.append(cellModel)
