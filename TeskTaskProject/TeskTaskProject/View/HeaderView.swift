@@ -13,7 +13,7 @@ import UIKit
 
 // MARK: - Constant Constraints
 
-    extension CGFloat {
+extension CGFloat {
     
     static let welcomeTitleTopAncor: CGFloat = 56
     static let welcomeTitleHeightAnchor: CGFloat = 80.0
@@ -38,7 +38,6 @@ import UIKit
     
 }
 
-
 class HeaderView : UIView {
     
     weak var delegate: HeaderViewDelegate?
@@ -46,8 +45,8 @@ class HeaderView : UIView {
     var buttonHandler: (() -> Void)?
     
     // MARK: - Costomize
-      
-     lazy var welcomeTitle : UILabel = {
+    
+    lazy var welcomeTitle : UILabel = {
         let welcomeTitle = UILabel()
         welcomeTitle.text = "Персональные данные"
         welcomeTitle.font = UIFont.systemFont(ofSize: 30)
@@ -58,8 +57,7 @@ class HeaderView : UIView {
         return welcomeTitle
     } ()
     
-    
-      lazy var nameTextField : UITextField = {
+    lazy var nameTextField : UITextField = {
         let nameTextField = UITextField ()
         nameTextField.backgroundColor = .lightText
         nameTextField.placeholder = "Имя"
@@ -67,7 +65,7 @@ class HeaderView : UIView {
         return nameTextField
     }()
     
-      lazy var ageTextField : UITextField = {
+    lazy var ageTextField : UITextField = {
         let ageTextField = UITextField ()
         ageTextField.backgroundColor = .lightText
         ageTextField.placeholder = "Возраст"
@@ -75,7 +73,7 @@ class HeaderView : UIView {
         return ageTextField
     }()
     
-      lazy var childLabel : UILabel = {
+    lazy var childLabel : UILabel = {
         let childLabel = UILabel()
         childLabel.text = "Дети(макс.5)"
         childLabel.font = UIFont.systemFont(ofSize: 30)
@@ -86,7 +84,7 @@ class HeaderView : UIView {
         return childLabel
     } ()
     
-      lazy var addButton : UIButton = {
+    lazy var addButton : UIButton = {
         let addButton = UIButton ()
         addButton.setTitle("+ Добавить ребенка", for: .normal)
         addButton.setTitleColor(UIColor.blue, for: .normal)
@@ -102,9 +100,9 @@ class HeaderView : UIView {
     // MARK: - Initialization
     
     override init(frame: CGRect) {
-         super.init(frame:frame)
+        super.init(frame:frame)
         configureView()
- 
+        
     }
     
     required init?(coder: NSCoder) {
@@ -115,15 +113,7 @@ class HeaderView : UIView {
     
     @objc func addBut (){
         delegate?.didTapAdd()
-//        buttonHandler?()
-        
-// должно срабатывать по нажатию и добавлять по одной ячейки до 5 ячеек
-        
-//        nameChildTextField.isHidden = false
-//        ageChildTextField.isHidden = false
-//        deleteButton.isHidden = false
-
-        
+    
         print("добавить ребенка")
     }
     

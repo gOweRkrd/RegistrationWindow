@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: - Constant Constraints
 
- extension CGFloat {
+extension CGFloat {
     
     static let nameChildTextFieldTopAnchor: CGFloat = 7
     static let nameChildTextFieldLeadingAnchor: CGFloat = 17
@@ -28,8 +28,7 @@ protocol MyOwnCellDelegate: AnyObject {
 class MyOwnCell: UITableViewCell  {
     
     weak var delegate: MyOwnCellDelegate?
-   
-
+    
     // MARK: - Castomize UI
     
     lazy var nameChildTextField : UITextField = {
@@ -38,7 +37,7 @@ class MyOwnCell: UITableViewCell  {
         nameChildTextField.placeholder = "Имя"
         nameChildTextField.layer.masksToBounds = false
         nameChildTextField.isHidden = false
-      
+        
         
         return nameChildTextField
     }()
@@ -63,8 +62,6 @@ class MyOwnCell: UITableViewCell  {
         return deleteButton
     }()
     
-    
-    
     // MARK: - Castomize Cell
     
     func castomizeCell () {
@@ -75,7 +72,7 @@ class MyOwnCell: UITableViewCell  {
     }
     
     func setupContent(model: CellModel) {
-  
+        
     }
     
     // MARK: - Initialization
@@ -85,7 +82,7 @@ class MyOwnCell: UITableViewCell  {
         
         configureView()
         castomizeCell()
-       
+        
     }
     
     required init?(coder: NSCoder) {

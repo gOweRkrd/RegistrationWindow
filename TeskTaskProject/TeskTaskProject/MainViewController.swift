@@ -7,15 +7,15 @@
 
 import UIKit
 
-//    1. как сделать ,так чтобы при сборке не было видно ячейки  ?
-//    2. как сделать ,чтобы при сбросе данных ,данные очищались и в ячейке таблицы ?
+
+//    1. как сделать ,чтобы при сбросе данных ,данные очищались и в ячейке таблицы ?
+//    2. почему ячейки при добавлению перемешиваются между собой?
 
 // MARK: - Constant Constraints
 
-    extension CGFloat {
-        
-    static let headerViewHeightAnchor : CGFloat = -550
+extension CGFloat {
     
+    static let headerViewHeightAnchor : CGFloat = -550
     static let myTableViewTrailingAnchor : CGFloat = 50
     static let myTableViewBottomAnchor : CGFloat = -90
 }
@@ -25,64 +25,59 @@ class MainViewController: UIViewController {
     var isButtonEnabled: Bool {
         items.count >= 4
     }
-   
+    
     // MARK: - Lifecycle
     
-            let headerView = HeaderView()
-            let footerView = FooterView()
-            let myTableView = UITableView(frame: .zero, style: .plain)
-            let cellView = MyOwnCell ()
-  
-    var items = [CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")]
-//    var items = [Int]()
-
+    let headerView = HeaderView()
+    let footerView = FooterView()
+    let myTableView = UITableView(frame: .zero, style: .plain)
+//    let cellView = MyOwnCell ()
+    
+    var items: [CellModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        headerView.delegate = self
+        footerView.delegate = self
         setupTableView()
         setupConstraints()
         colorView ()
-        
-        }
-        
+
     }
+    
+}
 
 // MARK: - TableViewDataSource,TableViewDelegate
 
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return items.count
-       
+        
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellID", for: indexPath) as? MyOwnCell  else {
             fatalError("Creating cell from HotelsListViewController failed")
-
+            
         }
-// при любом нажатии кнопки(удалить или добавить) очищает  ячейки
-//        cell.ageChildTextField.text = ""
-//        cell.nameChildTextField.text = ""
-    
+   
         cell.setupContent(model: items[indexPath.row] )
-       
+        
         cell.delegate = self
-        headerView.delegate = self
-        footerView.delegate = self
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-            print("добавить ребенка таблица")
         
-        }
-  
+        print("добавить ребенка таблица")
+        
     }
+    
+}
 
 extension MainViewController: UITableViewDelegate {
 }
@@ -90,12 +85,12 @@ extension MainViewController: UITableViewDelegate {
 // MARK: - Action Delegate
 
 extension MainViewController: MyOwnCellDelegate {
-  
+    
     func didTapDelete() {
         
-// метод поставновки ограничения на добавления в массив
+        // метод поставновки ограничения на добавления в массив
         buttonEnabledDelete ()
-        items.removeFirst()
+        items.remove(at: 0)
         myTableView.reloadData()
     }
 }
@@ -104,12 +99,12 @@ extension MainViewController: HeaderViewDelegate {
     
     func didTapAdd()  {
         footerView.clearButton.isHidden = false
-
-         let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
         
-// метод поставновки ограничения на добавления в массив
+        let cellModel = CellModel(textFieldName: "", textFieldAge: "", deleteButton: "")
+        
+        // метод постановки ограничения на добавления в массив
         buttonEnabledAdd ()
-    
+        
         items.append(cellModel)
         myTableView.reloadData()
     }
@@ -151,42 +146,36 @@ extension MainViewController: FooterCellDelegate {
 
 extension MainViewController {
     
-        private func buttonEnabledAdd () {
-            
-            if isButtonEnabled {
-                
-                headerView.addButton.isEnabled = false
-                headerView.addButton.setTitleColor(UIColor.red, for: .normal)
-            } else {
-                headerView.addButton.isEnabled = true
-            }
-        }
+    private func buttonEnabledAdd () {
         
-        private func buttonEnabledDelete () {
+        if isButtonEnabled {
             
-            if isButtonEnabled {
-                headerView.addButton.isEnabled = false
-                headerView.addButton.setTitleColor(UIColor.blue, for: .normal)
-            } else {
-                headerView.addButton.isEnabled = true
-            }
-            
-            
-        }
-        
-        private func alertAction() {
-            headerView.nameTextField.text = ""
-            headerView.ageTextField.text = ""
-//   не работает
-//          cellView.ageChildTextField.text = ""
-//          cellView.nameChildTextField.text = ""
-            
-            footerView.clearButton.isHidden = true
-           
-            items.removeAll()
-            myTableView.reloadData()
+            headerView.addButton.isEnabled = false
+//            headerView.addButton.setTitleColor(UIColor.red, for: .normal)
+        } else {
+            headerView.addButton.isEnabled = true
         }
     }
     
+    private func buttonEnabledDelete () {
+        
+        if isButtonEnabled {
+            headerView.addButton.isEnabled = false
+//            headerView.addButton.setTitleColor(UIColor.blue, for: .normal)
+        } else {
+            headerView.addButton.isEnabled = true
+        }
+        
+    }
+    
+    private func alertAction() {
+        headerView.nameTextField.text = ""
+        headerView.ageTextField.text = ""
+        footerView.clearButton.isHidden = true
+        items.removeAll()
+        myTableView.reloadData()
+    }
+}
+
 
 
