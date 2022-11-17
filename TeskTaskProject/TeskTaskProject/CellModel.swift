@@ -8,7 +8,8 @@
 import UIKit
 
 struct CellModel {
-
+    
+    let index:String
     let textFieldName: String
     let textFieldAge: String
     let deleteButton : String
