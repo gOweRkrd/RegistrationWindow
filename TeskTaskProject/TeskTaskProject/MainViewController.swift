@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
     let myTableView = UITableView(frame: .zero, style: .plain)
     
     var items: [CellModel] = []
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
