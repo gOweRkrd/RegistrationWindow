@@ -6,10 +6,10 @@
 //
 
 import UIKit
- 
+
 extension MainViewController {
     
-     func setupConstraints() {
+    func setupConstraints() {
         let guide = view.safeAreaLayoutGuide
         
         view.addSubview(headerView)
@@ -19,7 +19,7 @@ extension MainViewController {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         myTableView.translatesAutoresizingMaskIntoConstraints = false
         footerView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -40,6 +40,6 @@ extension MainViewController {
             footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             footerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
         ])
-
+        
     }
 }

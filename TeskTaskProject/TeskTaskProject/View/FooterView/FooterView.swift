@@ -7,7 +7,7 @@ protocol FooterCellDelegate:AnyObject {
 }
 // MARK: - Constant Constraints
 
-    extension CGFloat {
+extension CGFloat {
     
     static let clearButtonTopAncor: CGFloat = 8
     static let clearButtonLeadingAnchor: CGFloat = 40
@@ -17,12 +17,13 @@ protocol FooterCellDelegate:AnyObject {
 
 class FooterView : UIView {
     
-        var buttonFooter: (() -> Void)?
-   weak var delegate: FooterCellDelegate?
+    var buttonFooter: (() -> Void)?
+    weak var delegate: FooterCellDelegate?
+    
     // MARK: - Costomize
     
-       lazy var clearButton : UIButton = {
-           
+    lazy var clearButton : UIButton = {
+        
         let clearButton = UIButton ()
         clearButton.setTitle("Очистить", for: .normal)
         clearButton.addTarget(self, action: #selector(clearBut), for:.touchUpInside)
@@ -35,7 +36,7 @@ class FooterView : UIView {
         
         return clearButton
     }()
-
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -45,12 +46,12 @@ class FooterView : UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - Action
     @objc func clearBut() {
-
+        
         delegate?.didTapCler()
-//        buttonFooter?()
+        //        buttonFooter?()
         
     }
     
