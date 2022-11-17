@@ -17,7 +17,6 @@ extension CGFloat {
 
 class FooterView : UIView {
     
-    var buttonFooter: (() -> Void)?
     weak var delegate: FooterCellDelegate?
     
     // MARK: - Costomize
@@ -51,7 +50,7 @@ class FooterView : UIView {
     @objc func clearBut() {
         
         delegate?.didTapCler()
-        //        buttonFooter?()
+       
         
     }
     

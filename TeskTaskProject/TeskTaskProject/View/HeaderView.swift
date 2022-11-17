@@ -30,7 +30,7 @@ extension CGFloat {
     
     static let childLabelTopAncor: CGFloat = 70
     static let childLabelHeightAnchor: CGFloat = 400
-    static let childleadingAnchor: CGFloat = 20
+    static let childleadingAnchor: CGFloat = 8
     static let childTrailingAnchor: CGFloat = -210
     
     static let addButtonTopAncor: CGFloat = 60
@@ -43,16 +43,13 @@ class HeaderView : UIView {
     
     weak var delegate: HeaderViewDelegate?
     
-    var buttonHandler: (() -> Void)?
-    
     // MARK: - Costomize
     
     lazy var welcomeTitle : UILabel = {
         let welcomeTitle = UILabel()
-        welcomeTitle.text = "Персональные данные"
+        welcomeTitle.text = "Регистрация родителя"
         welcomeTitle.font = UIFont.systemFont(ofSize: 30)
         welcomeTitle.font = UIFont.boldSystemFont(ofSize: 30.0)
-        welcomeTitle.font = UIFont.italicSystemFont(ofSize: 30.0)
         welcomeTitle.textAlignment = .center
         welcomeTitle.textColor = .black
         return welcomeTitle
@@ -80,7 +77,7 @@ class HeaderView : UIView {
         childLabel.font = UIFont.systemFont(ofSize: 30)
         childLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
         childLabel.font = UIFont.italicSystemFont(ofSize: 21.0)
-        childLabel.textAlignment = .left
+        childLabel.textAlignment = .center
         childLabel.textColor = .black
         return childLabel
     } ()
@@ -114,7 +111,6 @@ class HeaderView : UIView {
     
     @objc func addBut (){
         delegate?.didTapAdd()
-    
         print("добавить ребенка")
     }
     
