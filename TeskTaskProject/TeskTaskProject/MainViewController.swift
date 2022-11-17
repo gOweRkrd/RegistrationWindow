@@ -7,10 +7,6 @@
 
 import UIKit
 
-
-//    1. как сделать ,чтобы при сбросе данных ,данные очищались и в ячейке таблицы ?
-//    2. почему ячейки при добавлению перемешиваются между собой?
-
 // MARK: - Constant Constraints
 
 extension CGFloat {
@@ -52,7 +48,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sortedItems()
+
         return items.count
         
     }
@@ -62,7 +58,10 @@ extension MainViewController: UITableViewDataSource {
             fatalError("Creating cell from HotelsListViewController failed")
             
         }
-        
+    
+//            cell.nameChildTextField.text = ""
+//            cell.ageChildTextField.text = ""
+      
         cell.setupContent(model: items[indexPath.row] )
         cell.delegate = self
 
@@ -70,6 +69,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         
         print("добавить ребенка таблица")
         
@@ -85,7 +85,7 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: MyOwnCellDelegate {
     
     func didTapDelete() {
-        
+
         buttonEnabledDelete ()
         items.remove(at: 0)
         myTableView.reloadData()
@@ -147,7 +147,6 @@ extension MainViewController {
         if isButtonEnabled {
             
             headerView.addButton.isEnabled = false
-//            headerView.addButton.setTitleColor(UIColor.red, for: .normal)
         } else {
             headerView.addButton.isEnabled = true
         }
@@ -157,7 +156,6 @@ extension MainViewController {
         
         if isButtonEnabled {
             headerView.addButton.isEnabled = false
-//            headerView.addButton.setTitleColor(UIColor.blue, for: .normal)
         } else {
             headerView.addButton.isEnabled = true
         }
