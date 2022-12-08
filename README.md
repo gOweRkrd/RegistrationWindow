@@ -11,7 +11,7 @@
 - если нужно очистить окно регистрации нажимаем кнопку ```"Очистить" ```-> ```"Очистить данные" ```,если передумали ,нажимаем кнопку ```"Отмена"```
 - если нужно сохранить карточку регистрации нажимаем кнопку ```"Очистить" ```-> ```"Сохранить" ```
 
-**Стэк**:UIKit,СustomView,UITableView,UserDefaults,Delegate
+**Стэк**:UIKit,СustomView,UITableView,UserDefaults,ActionSheet,Delegate
 
 
 ![Simulator Screen Recording - iPhone 14 Pro - 2022-11-21 at 10 20 05](https://user-images.githubusercontent.com/110721351/202979261-8c245cb7-4356-4f18-a474-12f855bf0f7a.gif)
