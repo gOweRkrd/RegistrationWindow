@@ -2,6 +2,8 @@
 
 ### An application written without using storyboards. The entire layout was done by code using the MVC architecture.
 
+**Stack**:UIKit,СustomView,UITableView,UserDefaults,ActionSheet,Delegate
+
 **Meaning** : the parent must fill out a registration card for himself and if there are children
 
 #### Application functionality :
@@ -11,7 +13,6 @@
 - if you need to clear the registration window, click```"Очистить" ```-> ```"Очистить данные" ```,if you change your mind, press the button ```"Отмена"```
 - if you need to save the registration card, click```"Очистить" ```-> ```"Сохранить" ```
 
-**Stack**:UIKit,СustomView,UITableView,UserDefaults,ActionSheet,Delegate
 
 
 ![Simulator Screen Recording - iPhone 14 Pro - 2022-11-21 at 10 20 05](https://user-images.githubusercontent.com/110721351/202979261-8c245cb7-4356-4f18-a474-12f855bf0f7a.gif)
