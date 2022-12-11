@@ -1,17 +1,17 @@
-# Регистрационное окно родителя
+# Parent Registration Window
 
-### Приложение написанное без использования storyboards. Вся верстка была выполнена кодом c использованием архитектуры MVC.
+### An application written without using storyboards. The entire layout was done by code using the MVC architecture.
 
-**Смысл** : родитель должен заполнить регистрационную карточку на себя и если есть детей
+**Meaning** : the parent must fill out a registration card for himself and if there are children
 
-#### Функционал приложения :
+#### Application functionality :
 
-- если требуется добавить ребенка ,нажимаем на кнопку ```"+Добавить ребенка"``` и так можно добавить до 5 детей (стоит ограничение на добавление)
-- если требуется удалить строчку с ребенком нажимаем ```"Удалить"```
-- если нужно очистить окно регистрации нажимаем кнопку ```"Очистить" ```-> ```"Очистить данные" ```,если передумали ,нажимаем кнопку ```"Отмена"```
-- если нужно сохранить карточку регистрации нажимаем кнопку ```"Очистить" ```-> ```"Сохранить" ```
+- if you need to add a child, click on the button ```"+Добавить ребенка"``` and so you can add up to 5 children (there is a limit on adding)
+- if you want to delete a line with a child, click```"Удалить"```
+- if you need to clear the registration window, click```"Очистить" ```-> ```"Очистить данные" ```,if you change your mind, press the button ```"Отмена"```
+- if you need to save the registration card, click```"Очистить" ```-> ```"Сохранить" ```
 
-**Стэк**:UIKit,СustomView,UITableView,UserDefaults,ActionSheet,Delegate
+**Stack**:UIKit,СustomView,UITableView,UserDefaults,ActionSheet,Delegate
 
 
 ![Simulator Screen Recording - iPhone 14 Pro - 2022-11-21 at 10 20 05](https://user-images.githubusercontent.com/110721351/202979261-8c245cb7-4356-4f18-a474-12f855bf0f7a.gif)
