@@ -2,7 +2,7 @@
 
 ### An application written without using storyboards. The entire layout was done by code using the MVC architecture.
 
-**Meaning** : the parent must fill out a registration card for himself and if there are children
+**Meaning project** : the parent must fill out a registration card for himself and if there are children
 
 **Version iOS** : 14+
 
