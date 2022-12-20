@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5092E75A2923B15800022627 /* ExtensionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7592923B15800022627 /* ExtensionColorView.swift */; };
+		5092E75F2923B9FE00022627 /* ExtensionHVsetupConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */; };
+		5092E7622923BBBA00022627 /* ExtensionFVConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */; };
+		5092E7652923BCFD00022627 /* ExtensionCellConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */; };
 		50F6D8AA292174050019873D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8A9292174050019873D /* AppDelegate.swift */; };
 		50F6D8AC292174050019873D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8AB292174050019873D /* SceneDelegate.swift */; };
 		50F6D8AE292174050019873D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8AD292174050019873D /* MainViewController.swift */; };
@@ -16,10 +20,19 @@
 		50F6D8C02922239A0019873D /* MyOwnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8BF2922239A0019873D /* MyOwnCell.swift */; };
 		50F6D8C229222D470019873D /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8C129222D470019873D /* CellModel.swift */; };
 		50F6D8C4292383CA0019873D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8C3292383CA0019873D /* FooterView.swift */; };
+		50F6D8C92923AE700019873D /* ExtensionSetupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8C82923AE700019873D /* ExtensionSetupTableView.swift */; };
+		50F6D8CC2923AFD20019873D /* ExtensionSetupConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6D8CB2923AFD20019873D /* ExtensionSetupConstrains.swift */; };
+		8C5A07468D6B8F1DEB967BAC /* Pods_RegistrationWindow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7448CF0A8F679168EA8F96D /* Pods_RegistrationWindow.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50F6D8A6292174050019873D /* TeskTaskProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeskTaskProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21C9F3507893FD1FB2127274 /* Pods-RegistrationWindow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationWindow.release.xcconfig"; path = "Target Support Files/Pods-RegistrationWindow/Pods-RegistrationWindow.release.xcconfig"; sourceTree = "<group>"; };
+		4B7CD154B70D01A929017F9E /* Pods-RegistrationWindow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationWindow.debug.xcconfig"; path = "Target Support Files/Pods-RegistrationWindow/Pods-RegistrationWindow.debug.xcconfig"; sourceTree = "<group>"; };
+		5092E7592923B15800022627 /* ExtensionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColorView.swift; sourceTree = "<group>"; };
+		5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHVsetupConstrains.swift; sourceTree = "<group>"; };
+		5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFVConstrains.swift; sourceTree = "<group>"; };
+		5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCellConstrains.swift; sourceTree = "<group>"; };
+		50F6D8A6292174050019873D /* RegistrationWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegistrationWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F6D8A9292174050019873D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F6D8AB292174050019873D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		50F6D8AD292174050019873D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +43,9 @@
 		50F6D8BF2922239A0019873D /* MyOwnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOwnCell.swift; sourceTree = "<group>"; };
 		50F6D8C129222D470019873D /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		50F6D8C3292383CA0019873D /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		50F6D8C82923AE700019873D /* ExtensionSetupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetupTableView.swift; sourceTree = "<group>"; };
+		50F6D8CB2923AFD20019873D /* ExtensionSetupConstrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetupConstrains.swift; sourceTree = "<group>"; };
+		C7448CF0A8F679168EA8F96D /* Pods_RegistrationWindow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RegistrationWindow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,63 +53,147 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5A07468D6B8F1DEB967BAC /* Pods_RegistrationWindow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236E3324299EC4336879DF3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7448CF0A8F679168EA8F96D /* Pods_RegistrationWindow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E8F647A961C20590F1281B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B7CD154B70D01A929017F9E /* Pods-RegistrationWindow.debug.xcconfig */,
+				21C9F3507893FD1FB2127274 /* Pods-RegistrationWindow.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5092E75D2923B9B800022627 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8BD292174EF0019873D /* HeaderView.swift */,
+				5092E75E2923B9FE00022627 /* ExtensionHVsetupConstrains.swift */,
+			);
+			name = HeaderView;
+			sourceTree = "<group>";
+		};
+		5092E7602923BB5F00022627 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8C3292383CA0019873D /* FooterView.swift */,
+				5092E7612923BBBA00022627 /* ExtensionFVConstrains.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
+		5092E7632923BCD200022627 /* MyOwnCell */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8BF2922239A0019873D /* MyOwnCell.swift */,
+				5092E7642923BCFD00022627 /* ExtensionCellConstrains.swift */,
+			);
+			name = MyOwnCell;
+			sourceTree = "<group>";
+		};
 		50F6D89D292174050019873D = {
 			isa = PBXGroup;
 			children = (
-				50F6D8A8292174050019873D /* TeskTaskProject */,
+				50F6D8A8292174050019873D /* RegistrationWindow */,
 				50F6D8A7292174050019873D /* Products */,
+				4E8F647A961C20590F1281B2 /* Pods */,
+				236E3324299EC4336879DF3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		50F6D8A7292174050019873D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50F6D8A6292174050019873D /* TeskTaskProject.app */,
+				50F6D8A6292174050019873D /* RegistrationWindow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		50F6D8A8292174050019873D /* TeskTaskProject */ = {
+		50F6D8A8292174050019873D /* RegistrationWindow */ = {
 			isa = PBXGroup;
 			children = (
+				50F6D8C52923AAAC0019873D /* Model */,
+				50F6D8C62923AABF0019873D /* View */,
+				50F6D8C72923AAED0019873D /* Controller */,
 				50F6D8A9292174050019873D /* AppDelegate.swift */,
-				50F6D8AB292174050019873D /* SceneDelegate.swift */,
-				50F6D8AD292174050019873D /* MainViewController.swift */,
-				50F6D8BD292174EF0019873D /* HeaderView.swift */,
-				50F6D8C3292383CA0019873D /* FooterView.swift */,
-				50F6D8BF2922239A0019873D /* MyOwnCell.swift */,
-				50F6D8C129222D470019873D /* CellModel.swift */,
 				50F6D8B2292174060019873D /* Assets.xcassets */,
 				50F6D8B4292174060019873D /* LaunchScreen.storyboard */,
 				50F6D8B7292174060019873D /* Info.plist */,
 			);
-			path = TeskTaskProject;
+			path = RegistrationWindow;
+			sourceTree = "<group>";
+		};
+		50F6D8C52923AAAC0019873D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8C129222D470019873D /* CellModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		50F6D8C62923AABF0019873D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5092E75D2923B9B800022627 /* HeaderView */,
+				5092E7602923BB5F00022627 /* FooterView */,
+				5092E7632923BCD200022627 /* MyOwnCell */,
+				50F6D8AB292174050019873D /* SceneDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50F6D8C72923AAED0019873D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8AD292174050019873D /* MainViewController.swift */,
+				50F6D8CA2923AF720019873D /* Extension */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		50F6D8CA2923AF720019873D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				50F6D8C82923AE700019873D /* ExtensionSetupTableView.swift */,
+				50F6D8CB2923AFD20019873D /* ExtensionSetupConstrains.swift */,
+				5092E7592923B15800022627 /* ExtensionColorView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50F6D8A5292174050019873D /* TeskTaskProject */ = {
+		50F6D8A5292174050019873D /* RegistrationWindow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50F6D8BA292174060019873D /* Build configuration list for PBXNativeTarget "TeskTaskProject" */;
+			buildConfigurationList = 50F6D8BA292174060019873D /* Build configuration list for PBXNativeTarget "RegistrationWindow" */;
 			buildPhases = (
+				5C0CA0FDD9BE87CA013855A6 /* [CP] Check Pods Manifest.lock */,
 				50F6D8A2292174050019873D /* Sources */,
 				50F6D8A3292174050019873D /* Frameworks */,
 				50F6D8A4292174050019873D /* Resources */,
+				86FBC47AC11CB7793A1BE091 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TeskTaskProject;
+			name = RegistrationWindow;
 			productName = TeskTaskProject;
-			productReference = 50F6D8A6292174050019873D /* TeskTaskProject.app */;
+			productReference = 50F6D8A6292174050019873D /* RegistrationWindow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 50F6D8A1292174050019873D /* Build configuration list for PBXProject "TeskTaskProject" */;
+			buildConfigurationList = 50F6D8A1292174050019873D /* Build configuration list for PBXProject "RegistrationWindow" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +224,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50F6D8A5292174050019873D /* TeskTaskProject */,
+				50F6D8A5292174050019873D /* RegistrationWindow */,
 			);
 		};
 /* End PBXProject section */
@@ -141,17 +241,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C0CA0FDD9BE87CA013855A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RegistrationWindow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86FBC47AC11CB7793A1BE091 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RegistrationWindow/Pods-RegistrationWindow-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RegistrationWindow/Pods-RegistrationWindow-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RegistrationWindow/Pods-RegistrationWindow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50F6D8A2292174050019873D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5092E75A2923B15800022627 /* ExtensionColorView.swift in Sources */,
 				50F6D8BE292174EF0019873D /* HeaderView.swift in Sources */,
 				50F6D8C4292383CA0019873D /* FooterView.swift in Sources */,
 				50F6D8AE292174050019873D /* MainViewController.swift in Sources */,
 				50F6D8AA292174050019873D /* AppDelegate.swift in Sources */,
+				5092E7622923BBBA00022627 /* ExtensionFVConstrains.swift in Sources */,
+				50F6D8C92923AE700019873D /* ExtensionSetupTableView.swift in Sources */,
+				50F6D8CC2923AFD20019873D /* ExtensionSetupConstrains.swift in Sources */,
 				50F6D8C02922239A0019873D /* MyOwnCell.swift in Sources */,
+				5092E7652923BCFD00022627 /* ExtensionCellConstrains.swift in Sources */,
 				50F6D8AC292174050019873D /* SceneDelegate.swift in Sources */,
+				5092E75F2923B9FE00022627 /* ExtensionHVsetupConstrains.swift in Sources */,
 				50F6D8C229222D470019873D /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,13 +434,14 @@
 		};
 		50F6D8BB292174060019873D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B7CD154B70D01A929017F9E /* Pods-RegistrationWindow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TeskTaskProject/Info.plist;
+				INFOPLIST_FILE = RegistrationWindow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -302,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KosyakovAlexander.TeskTaskProject;
+				PRODUCT_BUNDLE_IDENTIFIER = KosyakovAlexander.RegistrationWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -312,13 +461,14 @@
 		};
 		50F6D8BC292174060019873D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21C9F3507893FD1FB2127274 /* Pods-RegistrationWindow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TeskTaskProject/Info.plist;
+				INFOPLIST_FILE = RegistrationWindow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -328,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KosyakovAlexander.TeskTaskProject;
+				PRODUCT_BUNDLE_IDENTIFIER = KosyakovAlexander.RegistrationWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,7 +489,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50F6D8A1292174050019873D /* Build configuration list for PBXProject "TeskTaskProject" */ = {
+		50F6D8A1292174050019873D /* Build configuration list for PBXProject "RegistrationWindow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50F6D8B8292174060019873D /* Debug */,
@@ -348,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50F6D8BA292174060019873D /* Build configuration list for PBXNativeTarget "TeskTaskProject" */ = {
+		50F6D8BA292174060019873D /* Build configuration list for PBXNativeTarget "RegistrationWindow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50F6D8BB292174060019873D /* Debug */,
