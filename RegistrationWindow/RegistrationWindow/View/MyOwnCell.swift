@@ -91,7 +91,7 @@ class MyOwnCell: UITableViewCell  {
     
     // MARK: - Action
     
-    @objc func deleteBut (){
+    @objc func deleteBut() {
     
         delegate?.didTapDelete()
     }
