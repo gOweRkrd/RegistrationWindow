@@ -24,7 +24,7 @@ class FooterView : UIView {
     lazy var clearButton : UIButton = {
         
         let clearButton = UIButton ()
-        clearButton.setTitle("Очистить", for: .normal)
+        clearButton.setTitle("Cохранить/Очистить", for: .normal)
         clearButton.addTarget(self, action: #selector(clearBut), for:.touchUpInside)
         clearButton.layer.masksToBounds = true
         clearButton.setTitleColor(UIColor.blue, for: .normal)
