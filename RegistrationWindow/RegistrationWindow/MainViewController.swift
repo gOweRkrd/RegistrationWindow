@@ -9,10 +9,6 @@ import UIKit
 import Realm
 import RealmSwift
 
-// 1. как очищать данные в ячейках таблицы при нажатии на кнопку очистить данные?
-// 2. как сделать ,чтобы ячейки в таблице не перемешивались при новых добавлениях?
-// 3. как сделать ,чтобы данные из ячеек сохранялись в User Defaults?
-
 struct KeyDefaults {
     static let keyNameTextField = "nameTextFieldDef"
     static let keyAgeTextField = "ageTextFieldDef"
