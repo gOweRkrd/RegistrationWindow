@@ -94,8 +94,6 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
 }
 
-//}
-
 extension MainViewController: UITableViewDelegate {
 }
 
@@ -121,8 +119,6 @@ extension MainViewController: HeaderViewDelegate {
         let cellModel = CellModel(index: "", textFieldName: "", textFieldAge: "", deleteButton: "")
         
         buttonEnabledAdd ()
-        
-        
         
         items.append(cellModel)
         myTableView.reloadData()
