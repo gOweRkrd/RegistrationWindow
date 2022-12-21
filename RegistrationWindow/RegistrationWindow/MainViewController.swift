@@ -43,7 +43,6 @@ class MainViewController: UIViewController,UITextFieldDelegate  {
         items.count >= 4
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
