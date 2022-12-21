@@ -29,7 +29,7 @@ class MainViewController: UIViewController,UITextFieldDelegate  {
     
     // создаем инициализацию UserDefaults
     let defaults = UserDefaults.standard
-
+    
     // MARK: - Lifecycle
     
     let headerView = HeaderView()
@@ -43,7 +43,7 @@ class MainViewController: UIViewController,UITextFieldDelegate  {
         items.count >= 4
     }
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,7 +57,7 @@ class MainViewController: UIViewController,UITextFieldDelegate  {
         headerView.ageTextField.text = defaults.string(forKey: "ageTextFieldDef")
         cellScreen.nameChildTextField.text = defaults.string(forKey:"nameChildTextFieldDef")
         cellScreen.ageChildTextField.text = defaults.string(forKey: "ageChildTextFieldDef")
-
+        
     }
     
 }
@@ -67,7 +67,7 @@ class MainViewController: UIViewController,UITextFieldDelegate  {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return items.count
         
     }
@@ -81,46 +81,19 @@ extension MainViewController: UITableViewDataSource {
         cell.ageChildTextField.delegate = self
         cell.nameChildTextField.tag = indexPath.row
         cell.ageChildTextField.tag = indexPath.row
-//        let nameChildTextFieldDef = cell.nameChildTextField.text!
-//        let ageChildTextFieldDef = cell.ageChildTextField.text!
-//        defaults.set(nameChildTextFieldDef,forKey: "nameChildTextFieldDef")
-//        defaults.set(ageChildTextFieldDef,forKey: "ageChildTextFieldDef")
-//        cell.accessoryType = .checkmark
         cell.setupContent(model: items[indexPath.row] )
         cell.delegate = self
-
+        
         return cell
     }
-    // удаление
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//      if editingStyle == .delete {
-//        print("Deleted")
-//
-//        self.items.remove(at: indexPath.row)
-//        self.myTableView.deleteRows(at: [indexPath], with: .automatic)
-//      }
+}
+
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-          
-               }
-      
-    // move
+    print("добавить ребенка таблица")
     
-//    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        let item = items[sourceIndexPath.row]
-//        items.remove(at: sourceIndexPath.row)
-//        items.insert(item,at: destinationIndexPath.row)
-//    }
-//
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print("добавить ребенка таблица")
-        
-    }
-    
+}
+
 //}
 
 extension MainViewController: UITableViewDelegate {
@@ -131,7 +104,7 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: MyOwnCellDelegate {
     
     func didTapDelete() {
-     
+        
         buttonEnabledDelete ()
         items.remove(at:0)
         let indexPath = IndexPath(item: 0, section: 0)
@@ -149,8 +122,8 @@ extension MainViewController: HeaderViewDelegate {
         
         buttonEnabledAdd ()
         
-       
-
+        
+        
         items.append(cellModel)
         myTableView.reloadData()
     }
@@ -158,7 +131,6 @@ extension MainViewController: HeaderViewDelegate {
 
 extension MainViewController: FooterCellDelegate {
     
-    // clear
     func didTapCler() {
         
         let actionSheetController = UIAlertController(
@@ -187,10 +159,10 @@ extension MainViewController: FooterCellDelegate {
             let ageTextFieldDef = self.headerView.ageTextField.text!
             let nameChildTextFieldDef = self.cellScreen.nameChildTextField.text!
             let ageChildTextFieldDef = self.cellScreen.ageChildTextField.text!
-//             проверка на пустые поля
+            //             проверка на пустые поля
             if !nameTextFieldDef.isEmpty && !ageTextFieldDef.isEmpty && !nameChildTextFieldDef.isEmpty && !ageChildTextFieldDef.isEmpty {
             }
-           
+            
             self.defaults.set(nameTextFieldDef,forKey: "nameTextFieldDef")
             self.defaults.set(ageTextFieldDef,forKey: "ageTextFieldDef")
             self.defaults.set(nameChildTextFieldDef,forKey: "nameChildTextFieldDef")
