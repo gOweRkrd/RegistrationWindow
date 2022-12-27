@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Realm
-import RealmSwift
 
 struct KeyDefaults {
     static let keyNameTextField = "nameTextFieldDef"
